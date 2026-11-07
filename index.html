@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIXCORDO — Baixar</title>
+<meta name="description" content="Baixe o DIXCORDO: rádio walkie-talkie para Android, voz direta e cifrada entre celulares.">
+<meta property="og:title" content="DIXCORDO — Baixar o app">
+<meta property="og:description" content="Rádio walkie-talkie para Android: voz e vídeo diretos e cifrados, grupos, localização em tempo real e alerta.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📻</text></svg>">
+<style>
+  :root {
+    --bg: #050a18; --panel: #0b1226; --line: rgba(125, 211, 252, .22); --text: #e2e8f0; --mute: #94a3b8;
+    --accent: #38bdf8; --amber: #f59e0b; --ok: #34d399;
+    --grad: linear-gradient(135deg, #2563eb, #7c3aed);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background-image: radial-gradient(circle at 50% -10%, rgba(37, 99, 235, .35), transparent 60%); min-height: 100vh; }
+  main { max-width: 640px; margin: 0 auto; padding: 32px 16px 48px; display: flex; flex-direction: column; gap: 22px; }
+  header { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .logo { font-size: 64px; line-height: 1; filter: drop-shadow(0 0 24px rgba(56, 189, 248, .5)); }
+  h1 { margin: 0; font-size: 40px; letter-spacing: 3px; font-weight: 900; }
+  .tag { margin: 0; color: var(--mute); }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
+  .dl { text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: stretch; }
+  .ver { font-size: 15px; color: var(--mute); }
+  .ver b { color: var(--text); font-size: 20px; }
+  .btn { display: block; text-decoration: none; background: var(--grad); color: #fff; font-weight: 800; font-size: 22px;
+    padding: 18px; border-radius: 16px; box-shadow: 0 0 30px rgba(124, 58, 237, .45); }
+  .btn small { display: block; font-size: 13px; font-weight: 500; opacity: .85; }
+  .btn:active { filter: brightness(1.2); }
+  .copy { background: none; border: 1px solid var(--line); color: var(--accent); border-radius: 12px; padding: 10px; font: inherit; font-size: 14px; cursor: pointer; }
+  h2 { margin: 0 0 10px; font-size: 18px; }
+  ul, ol { margin: 0; padding-left: 22px; }
+  li { margin: 4px 0; }
+  .notes { white-space: pre-line; color: var(--text); font-size: 15px; }
+  .feat { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .feat div { background: rgba(3, 2, 12, .6); border: 1px solid var(--line); border-radius: 14px; padding: 12px; font-size: 14px; }
+  .feat b { display: block; font-size: 15px; }
+  .warn { border-color: rgba(245, 158, 11, .45); }
+  .warn h2 { color: #fde68a; }
+  footer { text-align: center; color: var(--mute); font-size: 13px; }
+  footer a, .card a { color: var(--accent); }
+  @media (max-width: 420px) { .feat { grid-template-columns: 1fr; } h1 { font-size: 32px; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="logo">📻</div>
+    <h1>DIXCORDO</h1>
+    <p class="tag">Rádio walkie-talkie para Android — voz direta e cifrada entre celulares.</p>
+  </header>
+
+  <section class="card dl">
+    <div class="ver" id="ver">Versão mais nova: <b>carregando…</b></div>
+    <!-- link fixo: sempre baixa o APK da versão mais nova (funciona mesmo sem JavaScript) -->
+    <a class="btn" id="btn" href="https://github.com/MarcioSchuenk/dixcordo-download/releases/latest/download/DIXCORDO.apk">
+      ⬇️ Baixar o DIXCORDO<small id="btn-sub">APK para Android</small></a>
+    <button class="copy" id="copy" type="button">🔗 Copiar link para mandar a alguém</button>
+  </section>
+
+  <section class="card" id="news" hidden>
+    <h2>✨ Novidades desta versão</h2>
+    <div class="notes" id="notes"></div>
+  </section>
+
+  <section class="card">
+    <h2>📲 Como instalar</h2>
+    <ol>
+      <li>Toque em <b>Baixar o DIXCORDO</b> e espere terminar.</li>
+      <li>Abra o arquivo <b>DIXCORDO.apk</b> (na notificação do download ou em <i>Arquivos → Downloads</i>).</li>
+      <li>Se o celular pedir, permita <b>“Instalar apps desconhecidos”</b> para o navegador ou o app de arquivos.</li>
+      <li>Se aparecer o aviso do <b>Play Protect</b>, toque em <b>Mais detalhes → Instalar mesmo assim</b> (o app não vem da Play Store, por isso o aviso).</li>
+      <li>Abra o DIXCORDO e siga o guia <b>Rádio 24 horas</b> para liberar bateria e permissões.</li>
+    </ol>
+  </section>
+
+  <section class="card warn">
+    <h2>🔄 Para atualizar</h2>
+    <p style="margin:0">Baixe de novo por esta página e instale <b>por cima</b> — seus contatos e grupos continuam. Esta página sempre entrega a versão mais nova.
+      Para usar o vídeo, os dois celulares precisam estar na mesma versão (ou mais nova).</p>
+  </section>
+
+  <section class="card">
+    <h2>O que o app faz</h2>
+    <div class="feat">
+      <div><b>🎙️ Rádio</b>Aperte e fale, como um walkie-talkie. Funciona com a tela apagada.</div>
+      <div><b>🔒 Cifrado</b>Voz e vídeo vão direto entre os celulares, sem servidor no meio.</div>
+      <div><b>👥 Grupos</b>Até 5 pessoas falando no mesmo canal, com mensagens.</div>
+      <div><b>📷 Vídeo</b>Câmera opcional na conversa e no grupo — começa desligada.</div>
+      <div><b>📍 Localização</b>Veja seus contatos no mapa em tempo real, todos de uma vez.</div>
+      <div><b>🚨 Alerta</b>Sirene no celular do contato, mesmo no silencioso.</div>
+    </div>
+  </section>
+
+  <footer>
+    Requer Android 10 ou mais novo, com o “Android System WebView” e o Chrome atualizados.<br>
+    <a href="https://github.com/MarcioSchuenk/dixcordo-download/releases">Versões anteriores</a>
+  </footer>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var REPO = 'MarcioSchuenk/dixcordo-download';
+  var FIXED = 'https://github.com/' + REPO + '/releases/latest/download/DIXCORDO.apk';
+  var $ = function (id) { return document.getElementById(id); };
+
+  $('copy').onclick = function () {
+    var url = location.href.split('#')[0];
+    var done = function () { $('copy').textContent = '✅ Link copiado'; setTimeout(function () { $('copy').textContent = '🔗 Copiar link para mandar a alguém'; }, 2500); };
+    if (navigator.clipboard) navigator.clipboard.writeText(url).then(done, function () { prompt('Copie o link:', url); });
+    else prompt('Copie o link:', url);
+  };
+
+  // Mostra a versão mais nova, a data, o tamanho e as novidades (a API do GitHub responde sem login).
+  fetch('https://api.github.com/repos/' + REPO + '/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (rel) {
+      var apk = (rel.assets || []).filter(function (a) { return /^DIXCORDO-v.*\.apk$/i.test(a.name); })[0]
+        || (rel.assets || []).filter(function (a) { return /\.apk$/i.test(a.name); })[0];
+      var v = String(rel.tag_name || '').replace(/^v/, '');
+      var d = rel.published_at ? new Date(rel.published_at).toLocaleDateString('pt-BR') : '';
+      $('ver').innerHTML = 'Versão mais nova: <b></b>' + (d ? ' · ' + d : '');
+      $('ver').querySelector('b').textContent = v || '—';
+      if (apk) {
+        $('btn').href = apk.browser_download_url;
+        $('btn-sub').textContent = 'APK para Android · ' + (apk.size / 1048576).toFixed(1).replace('.', ',') + ' MB';
+      }
+      if (rel.body) { $('notes').textContent = rel.body.replace(/\r/g, ''); $('news').hidden = false; }
+    })
+    .catch(function () {
+      $('ver').innerHTML = 'Versão mais nova: <b>disponível</b>';
+      $('btn').href = FIXED;
+    });
+})();
+</script>
+</body>
+</html>
