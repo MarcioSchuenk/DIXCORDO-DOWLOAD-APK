@@ -1,6 +1,6 @@
 # DIXCORDO — download
 
-Página para baixar o APK do DIXCORDO (rádio walkie-talkie para Android).
+Página para baixar o APK do DIXCORDO (APP de cominicação descentralizado para Android).
 
 **Baixar:** https://marcioschuenk.github.io/DIXCORDO-DOWLOAD-APK/
 
