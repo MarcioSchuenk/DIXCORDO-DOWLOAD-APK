@@ -2,8 +2,8 @@
 
 Página para baixar o APK do DIXCORDO (rádio walkie-talkie para Android).
 
-**Baixar:** https://marcioschuenk.github.io/dixcordo-download/
+**Baixar:** https://marcioschuenk.github.io/DIXCORDO-DOWLOAD-APK/
 
-Link direto (sempre a versão mais nova): https://github.com/MarcioSchuenk/dixcordo-download/releases/latest/download/DIXCORDO.apk
+Link direto (sempre a versão mais nova): https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO.apk
 
 Este repositório só distribui o app. O código-fonte não é público.
