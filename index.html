@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>DIXCORDO — rádio, chamadas e comboio, direto entre celulares</title>
-<meta name="description" content="DIXCORDO: walkie-talkie para Android. Voz e vídeo direto entre celulares, cifrados, sem conta e sem servidor. Grupos, Modo Jornada para comboios, recados que somem e muito mais.">
+<title>Baixar o DIXCORDO — Android, Windows e Linux</title>
+<meta name="description" content="Baixe o DIXCORDO para Android, Windows e Linux: walkie-talkie. Voz e vídeo direto entre celulares, cifrados, sem conta e sem servidor. Grupos, Modo Jornada para comboios, recados que somem e muito mais.">
 <meta name="theme-color" content="#050a18">
 <meta property="og:type" content="website">
 <meta property="og:title" content="DIXCORDO — rádio, chamadas e comboio, direto entre celulares">
@@ -84,6 +84,21 @@
     box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .8), 0 0 0 1px rgba(255, 255, 255, .03) inset; }
   .phone img { border-radius: 26px; width: 100%; height: auto; aspect-ratio: 720 / 1470; object-fit: cover; object-position: top; background: #0b1226; }
 
+  /* downloads */
+  .dls { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; margin-top: 40px; }
+  .dlc { background: var(--panel); border: 1px solid var(--line); border-radius: 24px; padding: 26px 22px; display: flex; flex-direction: column; gap: 12px; }
+  .dlc.mine { border-color: rgba(139, 92, 246, .7); box-shadow: 0 0 0 1px rgba(139, 92, 246, .35), 0 20px 60px -30px rgba(124, 58, 237, .8); }
+  .dlc .os { display: flex; align-items: center; gap: 12px; }
+  .dlc .os > span:first-child { font-size: 34px; }
+  .dlc h3 { font-size: 22px; }
+  .dlc .meta { color: var(--mute); font-size: 14px; }
+  .dlc ol { margin: 0; padding-left: 20px; color: #cbd5e1; font-size: 15px; }
+  .dlc ol li { margin: 4px 0; }
+  .dlc .btn { width: 100%; margin-top: auto; }
+  .dlc code { background: rgba(2, 4, 10, .8); border: 1px solid var(--line); border-radius: 8px; padding: 2px 6px; font-size: 13px; word-break: break-all; }
+  .badge { display: inline-block; font-size: 12px; font-weight: 700; color: #c4b5fd; border: 1px solid rgba(139, 92, 246, .5); border-radius: 999px; padding: 2px 10px; margin-left: auto; }
+  .dl-note { color: var(--mute); font-size: 14px; text-align: center; margin-top: 18px; }
+
   /* destaques com captura */
   .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
   .feature + .feature { margin-top: 96px; }
@@ -162,13 +177,14 @@
   <div class="wrap">
     <a class="brand" href="#"><span>📻</span>DIXCORDO</a>
     <nav class="nav">
+      <a href="#baixar">Baixar</a>
       <a href="#recursos">Recursos</a>
       <a href="#jornada">Modo Jornada</a>
       <a href="#seguranca">Segurança</a>
       <a href="#instalar">Instalar</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
-    <a class="btn mini dl" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO.apk">⬇️ Baixar</a>
+    <a class="btn mini" href="#baixar">⬇️ Baixar</a>
   </div>
 </header>
 
@@ -177,23 +193,68 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <p class="kicker">Walkie-talkie para Android</p>
+        <p class="kicker">Walkie-talkie para Android, Windows e Linux</p>
         <h1>Aperte e fale.<br><em>Direto de celular para celular.</em></h1>
         <p class="lead">Rádio, chamadas de voz e vídeo, grupos e comboio de carros — tudo cifrado, sem conta, sem número de telefone e sem um servidor no meio guardando as suas conversas.</p>
         <div class="cta">
-          <a class="btn dl" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO.apk">
-            <span>⬇️</span><span class="t">Baixar o DIXCORDO<small class="dl-sub">APK para Android · grátis</small></span></a>
-          <a class="btn ghost" href="#recursos">Ver o que ele faz</a>
+          <a class="btn" id="hero-dl" href="#baixar">
+            <span>⬇️</span><span class="t"><span id="hero-dl-t">Baixar o DIXCORDO</span><small id="hero-dl-s">Android, Windows e Linux · grátis</small></span></a>
+          <a class="btn ghost" href="#baixar">Todas as versões</a>
         </div>
         <div class="ver" id="ver">Versão mais nova: <b>carregando…</b></div>
         <ul class="chips">
-          <li>🔒 Cifrado de ponta a ponta</li><li>🚫 Sem conta</li><li>📡 Funciona com a tela apagada</li><li>🚗 Comboio sem internet</li>
+          <li>🔒 Cifrado de ponta a ponta</li><li>🚫 Sem conta</li><li>📱 Android</li><li>🪟 Windows</li><li>🐧 Linux</li>
         </ul>
       </div>
       <div class="hero-shots" aria-hidden="true">
         <div class="phone p1"><img src="img/contatos.webp" alt="" width="720" height="1470"></div>
         <div class="phone p2"><img src="img/jornada.webp" alt="" width="720" height="1470"></div>
       </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOADS -->
+  <section id="baixar" class="alt">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Downloads</p>
+        <h2>Escolha o seu aparelho</h2>
+        <p class="lead">Grátis. Todas as versões conversam entre si — quem está no computador fala com quem está no celular.</p>
+      </div>
+      <div class="dls">
+        <div class="dlc" data-os="android">
+          <div class="os"><span>📱</span><h3>Android</h3><span class="badge">Completo</span></div>
+          <div class="meta">Android 10 ou mais novo · <span class="sz" data-f="DIXCORDO.apk">APK</span></div>
+          <ol>
+            <li>Baixe e abra o arquivo <b>DIXCORDO.apk</b>.</li>
+            <li>Permita <b>Instalar apps desconhecidos</b> se o celular pedir.</li>
+            <li>No aviso do Play Protect: <b>Verificar app › Instalar mesmo assim</b>.</li>
+          </ol>
+          <a class="btn" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO.apk"><span>⬇️</span><span class="t">Baixar para Android<small>APK · atualiza sozinho</small></span></a>
+        </div>
+        <div class="dlc" data-os="windows">
+          <div class="os"><span>🪟</span><h3>Windows</h3></div>
+          <div class="meta">Windows 10 ou 11, 64 bits · <span class="sz" data-f="DIXCORDO-windows-x64.zip">ZIP</span></div>
+          <ol>
+            <li>Baixe o <b>.zip</b> e extraia (botão direito › <b>Extrair tudo</b>).</li>
+            <li>Abra o <b>DIXCORDO.exe</b> da pasta extraída.</li>
+            <li>Se o Windows mostrar "O Windows protegeu o computador": <b>Mais informações › Executar assim mesmo</b>.</li>
+          </ol>
+          <a class="btn" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO-windows-x64.zip"><span>⬇️</span><span class="t">Baixar para Windows<small>versão portátil (.zip)</small></span></a>
+        </div>
+        <div class="dlc" data-os="linux">
+          <div class="os"><span>🐧</span><h3>Linux</h3></div>
+          <div class="meta">Ubuntu, Debian, Mint, Pop!_OS (64 bits) · <span class="sz" data-f="DIXCORDO-linux-amd64.deb">.deb</span></div>
+          <ol>
+            <li>Baixe o pacote <b>.deb</b>.</li>
+            <li>Abra com a Central de Programas, ou no terminal: <code>sudo apt install ./DIXCORDO-linux-amd64.deb</code></li>
+            <li>Procure <b>DIXCORDO</b> nos seus aplicativos.</li>
+          </ol>
+          <a class="btn" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO-linux-amd64.deb"><span>⬇️</span><span class="t">Baixar para Linux<small>pacote .deb</small></span></a>
+        </div>
+      </div>
+      <p class="dl-note">No computador ficam rádio, chamadas de voz e vídeo, grupos, recados, arquivos e temas. O <b>Modo Jornada</b> (comboio no mapa) é só no celular.<br>
+        Versão mais nova: <b id="ver2">…</b> · <a href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases">versões anteriores</a></p>
     </div>
   </section>
 
@@ -358,6 +419,8 @@
           <p>Na aba <b>Conectar</b>, mande o seu código de 30 números (ou mostre o QR code) para a outra pessoa. Quando ela adicionar, vocês dois já podem falar.</p></details>
         <details><summary>Como atualizo?</summary>
           <p>O app procura versões novas sozinho e avisa. Se preferir, baixe de novo por esta página e instale <b>por cima</b> — seus contatos e grupos continuam.</p></details>
+        <details><summary>Tem para computador?</summary>
+          <p>Sim: Windows (10 e 11) e Linux (.deb para Ubuntu, Debian, Mint, Pop!_OS…). No computador funcionam rádio, chamadas de voz e vídeo, grupos, recados, arquivos e temas — e você fala com quem está no celular. O Modo Jornada é só no celular. O app do computador avisa quando sai versão nova.</p></details>
         <details><summary>Quais celulares são compatíveis?</summary>
           <p>Android 10 ou mais novo, com o <b>Android System WebView</b> e o <b>Google Chrome</b> atualizados pela Play Store.</p></details>
       </div>
@@ -371,8 +434,7 @@
         <h2>Bora falar?</h2>
         <p class="lead">Baixe, mande o seu código para quem você quer chamar e aperte para falar.</p>
         <div class="cta">
-          <a class="btn dl" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO.apk">
-            <span>⬇️</span><span class="t">Baixar o DIXCORDO<small class="dl-sub">APK para Android · grátis</small></span></a>
+          <a class="btn" href="#baixar"><span>⬇️</span><span class="t">Baixar o DIXCORDO<small>Android, Windows e Linux · grátis</small></span></a>
           <button class="copy" id="copy" type="button">🔗 Copiar link para mandar a alguém</button>
         </div>
       </div>
@@ -382,7 +444,7 @@
 
 <footer>
   <div class="wrap">
-    <span>📻 DIXCORDO · Android 10 ou mais novo</span>
+    <span>📻 DIXCORDO · Android 10+, Windows 10/11 e Linux (.deb)</span>
     <span><a href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases">Versões anteriores</a></span>
   </div>
 </footer>
@@ -400,6 +462,16 @@
     else prompt('Copie o link:', url);
   };
 
+  // Botão principal conforme o sistema de quem visita (Android / Windows / Linux); o cartão dele ganha destaque.
+  var ua = navigator.userAgent || '', os = /Android/i.test(ua) ? 'android' : /Windows/i.test(ua) ? 'windows' : /Linux|X11/i.test(ua) ? 'linux' : '';
+  var NAMES = { android: ['Baixar para Android', 'APK · grátis', 'DIXCORDO.apk'], windows: ['Baixar para Windows', 'versão portátil (.zip) · grátis', 'DIXCORDO-windows-x64.zip'], linux: ['Baixar para Linux', 'pacote .deb · grátis', 'DIXCORDO-linux-amd64.deb'] };
+  if (os) {
+    $('hero-dl').href = 'https://github.com/' + REPO + '/releases/latest/download/' + NAMES[os][2];
+    $('hero-dl-t').textContent = NAMES[os][0]; $('hero-dl-s').textContent = NAMES[os][1];
+    var card = document.querySelector('.dlc[data-os="' + os + '"]');
+    if (card) { card.classList.add('mine'); card.parentNode.insertBefore(card, card.parentNode.firstChild); }
+  }
+
   // Versão, tamanho e novidades da última versão (API pública do GitHub). Sem ela, o link fixo continua funcionando.
   fetch('https://api.github.com/repos/' + REPO + '/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
@@ -410,11 +482,13 @@
       var d = rel.published_at ? new Date(rel.published_at).toLocaleDateString('pt-BR') : '';
       $('ver').innerHTML = 'Versão mais nova: <b></b>' + (d ? ' · ' + d : '');
       $('ver').querySelector('b').textContent = v || '—';
-      if (apk) {
-        var mb = (apk.size / 1048576).toFixed(1).replace('.', ',') + ' MB';
-        [].forEach.call(document.querySelectorAll('a.dl'), function (a) { a.href = apk.browser_download_url; });
-        [].forEach.call(document.querySelectorAll('.dl-sub'), function (s) { s.textContent = 'APK para Android · grátis · ' + mb; });
-      }
+      $('ver2').textContent = v || '—';
+      var mb = function (n) { return (n / 1048576).toFixed(n > 10485760 ? 0 : 1).replace('.', ',') + ' MB'; };
+      [].forEach.call(document.querySelectorAll('.sz'), function (s) {
+        var a = (rel.assets || []).filter(function (x) { return x.name === s.dataset.f; })[0];
+        if (a) s.textContent = s.textContent + ' · ' + mb(a.size);
+      });
+      void apk;
       $('news-when').textContent = 'Versão ' + (v || '?') + (d ? ' · ' + d : '');
       var list = $('news-list');
       String(rel.body || '').replace(/\r/g, '').split(/\n+/).forEach(function (line) {
@@ -427,6 +501,7 @@
     })
     .catch(function () {
       $('ver').innerHTML = 'Versão mais nova: <b>disponível</b>';
+      $('ver2').textContent = 'disponível';
       $('news-when').textContent = 'Não deu para carregar as novidades agora.';
     });
 })();
