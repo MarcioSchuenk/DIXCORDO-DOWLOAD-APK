@@ -2,111 +2,395 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DIXCORDO — Baixar</title>
-<meta name="description" content="Baixe o DIXCORDO: rádio walkie-talkie para Android, voz direta e cifrada entre celulares.">
-<meta property="og:title" content="DIXCORDO — Baixar o app">
-<meta property="og:description" content="Rádio walkie-talkie para Android: voz e vídeo diretos e cifrados, grupos, localização em tempo real e alerta.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DIXCORDO — rádio, chamadas e comboio, direto entre celulares</title>
+<meta name="description" content="DIXCORDO: walkie-talkie para Android. Voz e vídeo direto entre celulares, cifrados, sem conta e sem servidor. Grupos, Modo Jornada para comboios, recados que somem e muito mais.">
+<meta name="theme-color" content="#050a18">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DIXCORDO — rádio, chamadas e comboio, direto entre celulares">
+<meta property="og:description" content="Aperte e fale. Voz e vídeo cifrados de celular para celular, sem conta e sem servidor. Grátis para Android.">
+<meta property="og:image" content="img/jornada.webp">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📻</text></svg>">
 <style>
   :root {
-    --bg: #050a18; --panel: #0b1226; --line: rgba(125, 211, 252, .22); --text: #e2e8f0; --mute: #94a3b8;
-    --accent: #38bdf8; --amber: #f59e0b; --ok: #34d399;
+    --bg: #050a18; --bg2: #081028; --panel: #0c1430; --panel2: #101a3a; --line: rgba(125, 211, 252, .16);
+    --text: #e6edf7; --mute: #9aa8c0; --accent: #38bdf8; --violet: #8b5cf6; --amber: #f59e0b; --ok: #34d399; --red: #ef4444;
     --grad: linear-gradient(135deg, #2563eb, #7c3aed);
+    --r: 20px;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    background-image: radial-gradient(circle at 50% -10%, rgba(37, 99, 235, .35), transparent 60%); min-height: 100vh; }
-  main { max-width: 640px; margin: 0 auto; padding: 32px 16px 48px; display: flex; flex-direction: column; gap: 22px; }
-  header { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; }
-  .logo { font-size: 64px; line-height: 1; filter: drop-shadow(0 0 24px rgba(56, 189, 248, .5)); }
-  h1 { margin: 0; font-size: 40px; letter-spacing: 3px; font-weight: 900; }
-  .tag { margin: 0; color: var(--mute); }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
-  .dl { text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: stretch; }
-  .ver { font-size: 15px; color: var(--mute); }
-  .ver b { color: var(--text); font-size: 20px; }
-  .btn { display: block; text-decoration: none; background: var(--grad); color: #fff; font-weight: 800; font-size: 22px;
-    padding: 18px; border-radius: 16px; box-shadow: 0 0 30px rgba(124, 58, 237, .45); }
-  .btn small { display: block; font-size: 13px; font-weight: 500; opacity: .85; }
-  .btn:active { filter: brightness(1.2); }
-  .copy { background: none; border: 1px solid var(--line); color: var(--accent); border-radius: 12px; padding: 10px; font: inherit; font-size: 14px; cursor: pointer; }
-  h2 { margin: 0 0 10px; font-size: 18px; }
-  ul, ol { margin: 0; padding-left: 22px; }
-  li { margin: 4px 0; }
-  .notes { white-space: pre-line; color: var(--text); font-size: 15px; }
-  .feat { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .feat div { background: rgba(3, 2, 12, .6); border: 1px solid var(--line); border-radius: 14px; padding: 12px; font-size: 14px; }
-  .feat b { display: block; font-size: 15px; }
-  .warn { border-color: rgba(245, 158, 11, .45); }
-  .warn h2 { color: #fde68a; }
-  footer { text-align: center; color: var(--mute); font-size: 13px; }
-  footer a, .card a { color: var(--accent); }
-  .card a.btn { color: #fff; }
-  @media (max-width: 420px) { .feat { grid-template-columns: 1fr; } h1 { font-size: 32px; } }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--accent); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  section { padding: 72px 0; }
+  h1, h2, h3 { line-height: 1.15; margin: 0; letter-spacing: -.01em; }
+  h2 { font-size: clamp(28px, 4.2vw, 42px); font-weight: 850; }
+  .kicker { color: var(--accent); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 10px; }
+  .lead { color: var(--mute); font-size: clamp(16px, 2vw, 19px); max-width: 640px; margin: 14px 0 0; }
+  .center { text-align: center; } .center .lead { margin-left: auto; margin-right: auto; }
+
+  /* topo */
+  .top { position: sticky; top: 0; z-index: 20; background: rgba(5, 10, 24, .82); backdrop-filter: saturate(1.4) blur(12px);
+    -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; align-items: center; gap: 18px; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: 2px; color: var(--text); text-decoration: none; font-size: 18px; }
+  .brand span { font-size: 24px; }
+  .nav { display: flex; gap: 22px; margin-left: auto; }
+  .nav a { color: var(--mute); text-decoration: none; font-size: 15px; font-weight: 600; }
+  .nav a:hover { color: var(--text); }
+  .top .mini { margin-left: 4px; }
+  @media (max-width: 760px) { .nav { display: none; } .top .mini { margin-left: auto; } }
+
+  /* botões */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; font-weight: 800;
+    border-radius: 16px; padding: 16px 26px; font-size: 18px; color: #fff; background: var(--grad);
+    box-shadow: 0 10px 40px -10px rgba(124, 58, 237, .7); transition: transform .15s, filter .15s; }
+  .btn:hover { transform: translateY(-1px); filter: brightness(1.1); }
+  .btn small { display: block; font-size: 12px; font-weight: 500; opacity: .85; }
+  .btn .t { text-align: left; line-height: 1.25; }
+  .btn.ghost { background: transparent; border: 1px solid var(--line); box-shadow: none; color: var(--text); font-weight: 700; }
+  .btn.mini { padding: 9px 16px; font-size: 14px; border-radius: 12px; box-shadow: none; }
+
+  /* hero */
+  .hero { position: relative; padding: 56px 0 40px; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: -120px 0 auto; height: 700px; z-index: -1;
+    background: radial-gradient(600px 380px at 75% 30%, rgba(124, 58, 237, .28), transparent 70%),
+                radial-gradient(700px 420px at 20% 10%, rgba(37, 99, 235, .3), transparent 70%); }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: clamp(40px, 6.4vw, 68px); font-weight: 900; }
+  .hero h1 em { font-style: normal; background: linear-gradient(90deg, #60a5fa, #a78bfa); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; align-items: center; }
+  .ver { color: var(--mute); font-size: 14px; margin-top: 14px; }
+  .ver b { color: var(--text); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; padding: 0; list-style: none; }
+  .chips li { border: 1px solid var(--line); background: rgba(12, 20, 48, .6); border-radius: 999px; padding: 6px 12px; font-size: 14px; color: #cbd5e1; }
+  .hero-shots { position: relative; height: 560px; }
+  .hero-shots .phone { position: absolute; width: 250px; }
+  .hero-shots .p1 { right: 150px; top: 30px; transform: rotate(-6deg); }
+  .hero-shots .p2 { right: 0; top: 0; transform: rotate(4deg); z-index: 2; }
+  @media (max-width: 900px) {
+    .hero .wrap { grid-template-columns: 1fr; }
+    .hero-shots { height: 440px; max-width: 420px; margin: 0 auto; width: 100%; }
+    .hero-shots .phone { width: 200px; }
+    .hero-shots .p1 { right: auto; left: 0; } .hero-shots .p2 { right: 0; }
+  }
+  @media (max-width: 420px) { .hero-shots { height: 380px; } .hero-shots .phone { width: 170px; } }
+
+  /* moldura de celular */
+  .phone { border-radius: 34px; padding: 9px; background: linear-gradient(160deg, #1e293b, #0b1022); border: 1px solid rgba(148, 163, 184, .25);
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .8), 0 0 0 1px rgba(255, 255, 255, .03) inset; }
+  .phone img { border-radius: 26px; width: 100%; height: auto; aspect-ratio: 720 / 1470; object-fit: cover; object-position: top; background: #0b1226; }
+
+  /* destaques com captura */
+  .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .feature + .feature { margin-top: 96px; }
+  .feature.rev .shot { order: 2; }
+  .feature .shot { display: flex; justify-content: center; }
+  .feature .shot .phone { width: min(300px, 78vw); }
+  .ticks { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 12px; }
+  .ticks li { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; color: #cbd5e1; }
+  .ticks li b { color: var(--text); }
+  .ticks .i { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--panel2); border: 1px solid var(--line); font-size: 18px; }
+  @media (max-width: 860px) { .feature { grid-template-columns: 1fr; gap: 32px; } .feature.rev .shot { order: 0; } .feature + .feature { margin-top: 72px; } }
+
+  /* grade de recursos */
+  .alt { background: linear-gradient(180deg, var(--bg), var(--bg2) 20%, var(--bg2) 80%, var(--bg)); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin-top: 40px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 22px; }
+  .card .ico { font-size: 28px; }
+  .card h3 { font-size: 18px; margin: 10px 0 6px; }
+  .card p { margin: 0; color: var(--mute); font-size: 15px; }
+
+  /* segurança */
+  .sec { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 40px; }
+  .sec .card { background: linear-gradient(180deg, rgba(16, 26, 58, .9), rgba(12, 20, 48, .9)); }
+  .flow { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 36px 0 0; color: var(--mute); font-size: 15px; }
+  .flow .node { background: var(--panel2); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; color: var(--text); font-weight: 700; }
+  .flow .arrow { color: var(--ok); font-weight: 800; }
+
+  /* galeria */
+  .gallery { display: flex; gap: 18px; overflow-x: auto; padding: 32px 4px 18px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .gallery figure { margin: 0; flex: 0 0 auto; width: 230px; scroll-snap-align: center; }
+  .gallery figcaption { text-align: center; color: var(--mute); font-size: 14px; margin-top: 10px; }
+  .gallery::-webkit-scrollbar { height: 6px; } .gallery::-webkit-scrollbar-thumb { background: var(--line); border-radius: 6px; }
+
+  /* instalar */
+  .steps { counter-reset: s; list-style: none; padding: 0; margin: 36px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .steps li { counter-increment: s; background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 20px; position: relative; color: #cbd5e1; }
+  .steps li::before { content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--grad);
+    color: #fff; font-weight: 800; margin-bottom: 10px; }
+  .steps b { color: var(--text); }
+  .note { margin-top: 18px; border-radius: var(--r); padding: 20px 22px; background: rgba(245, 158, 11, .08); border: 1px solid rgba(245, 158, 11, .35); color: #fde7b0; }
+  .note h3 { color: #fde68a; font-size: 18px; margin-bottom: 6px; }
+  .note p { margin: 6px 0 0; }
+
+  /* novidades */
+  .news { margin-top: 28px; }
+  .news .card { max-width: 760px; margin: 0 auto; }
+  .news ul { margin: 10px 0 0; padding-left: 20px; color: #cbd5e1; }
+  .news li { margin: 6px 0; }
+  .news .when { color: var(--mute); font-size: 14px; }
+
+  /* dúvidas */
+  .faq { max-width: 820px; margin: 36px auto 0; display: grid; gap: 10px; }
+  .faq details { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 4px 20px; }
+  .faq summary { cursor: pointer; font-weight: 700; padding: 14px 0; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--accent); font-size: 22px; line-height: 1; }
+  .faq details[open] summary::after { content: "–"; }
+  .faq p { color: var(--mute); margin: 0 0 16px; }
+
+  /* chamada final */
+  .final { text-align: center; }
+  .final .box { background: radial-gradient(600px 260px at 50% 0, rgba(124, 58, 237, .35), transparent 70%), var(--panel);
+    border: 1px solid var(--line); border-radius: 28px; padding: 48px 20px; }
+  .final .cta { justify-content: center; }
+  .copy { background: none; border: 1px solid var(--line); color: var(--accent); border-radius: 12px; padding: 12px 16px; font: inherit; font-size: 15px; cursor: pointer; }
+
+  footer { border-top: 1px solid var(--line); color: var(--mute); font-size: 14px; padding: 28px 0 40px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
 </style>
 </head>
 <body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><span>📻</span>DIXCORDO</a>
+    <nav class="nav">
+      <a href="#recursos">Recursos</a>
+      <a href="#jornada">Modo Jornada</a>
+      <a href="#seguranca">Segurança</a>
+      <a href="#instalar">Instalar</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn mini dl" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO.apk">⬇️ Baixar</a>
+  </div>
+</header>
+
 <main>
-  <header>
-    <div class="logo">📻</div>
-    <h1>DIXCORDO</h1>
-    <p class="tag">Rádio walkie-talkie para Android — voz direta e cifrada entre celulares.</p>
-  </header>
-
-  <section class="card dl">
-    <div class="ver" id="ver">Versão mais nova: <b>carregando…</b></div>
-    <!-- link fixo: sempre baixa o APK da versão mais nova (funciona mesmo sem JavaScript) -->
-    <a class="btn" id="btn" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO.apk">
-      ⬇️ Baixar o DIXCORDO<small id="btn-sub">APK para Android</small></a>
-    <button class="copy" id="copy" type="button">🔗 Copiar link para mandar a alguém</button>
-  </section>
-
-  <section class="card" id="news" hidden>
-    <h2>✨ Novidades desta versão</h2>
-    <div class="notes" id="notes"></div>
-  </section>
-
-  <section class="card">
-    <h2>📲 Como instalar</h2>
-    <ol>
-      <li>Toque em <b>Baixar o DIXCORDO</b> e espere terminar.</li>
-      <li>Abra o arquivo do <b>DIXCORDO</b> (termina em <b>.apk</b>) na notificação do download ou em <i>Arquivos → Downloads</i>.</li>
-      <li>Se o celular pedir, permita <b>“Instalar apps desconhecidos”</b> para o navegador ou o app de arquivos.</li>
-      <li>Se aparecer o aviso do <b>Play Protect</b>, toque em <b>Mais detalhes → Instalar mesmo assim</b> (o app não vem da Play Store, por isso o aviso).</li>
-      <li>Abra o DIXCORDO e siga o guia <b>Rádio 24 horas</b> para liberar bateria e permissões.</li>
-    </ol>
-  </section>
-
-  <section class="card warn">
-    <h2>🔄 Para atualizar</h2>
-    <p style="margin:0">Baixe de novo por esta página e instale <b>por cima</b> — seus contatos e grupos continuam. Esta página sempre entrega a versão mais nova.
-      Para usar o vídeo, os dois celulares precisam estar na mesma versão (ou mais nova).</p>
-  </section>
-
-  <section class="card">
-    <h2>O que o app faz</h2>
-    <div class="feat">
-      <div><b>🎙️ Rádio</b>Aperte e fale, como um walkie-talkie. Funciona com a tela apagada.</div>
-      <div><b>🔒 Cifrado</b>Voz e vídeo vão direto entre os celulares, sem servidor no meio.</div>
-      <div><b>👥 Grupos</b>Até 5 pessoas falando no mesmo canal, com mensagens.</div>
-      <div><b>📷 Vídeo</b>Câmera opcional na conversa e no grupo — começa desligada.</div>
-      <div><b>📍 Localização</b>Veja seus contatos no mapa em tempo real, todos de uma vez.</div>
-      <div><b>🚨 Alerta</b>Sirene no celular do contato, mesmo no silencioso.</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Walkie-talkie para Android</p>
+        <h1>Aperte e fale.<br><em>Direto de celular para celular.</em></h1>
+        <p class="lead">Rádio, chamadas de voz e vídeo, grupos e comboio de carros — tudo cifrado, sem conta, sem número de telefone e sem um servidor no meio guardando as suas conversas.</p>
+        <div class="cta">
+          <a class="btn dl" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO.apk">
+            <span>⬇️</span><span class="t">Baixar o DIXCORDO<small class="dl-sub">APK para Android · grátis</small></span></a>
+          <a class="btn ghost" href="#recursos">Ver o que ele faz</a>
+        </div>
+        <div class="ver" id="ver">Versão mais nova: <b>carregando…</b></div>
+        <ul class="chips">
+          <li>🔒 Cifrado de ponta a ponta</li><li>🚫 Sem conta</li><li>📡 Funciona com a tela apagada</li><li>🚗 Comboio sem internet</li>
+        </ul>
+      </div>
+      <div class="hero-shots" aria-hidden="true">
+        <div class="phone p1"><img src="img/contatos.webp" alt="" width="720" height="1470"></div>
+        <div class="phone p2"><img src="img/jornada.webp" alt="" width="720" height="1470"></div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    Requer Android 10 ou mais novo, com o “Android System WebView” e o Chrome atualizados.<br>
-    <a href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases">Versões anteriores</a>
-  </footer>
+  <!-- DESTAQUES -->
+  <section id="recursos">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Recursos</p>
+        <h2>Um rádio de verdade no seu bolso</h2>
+        <p class="lead">Feito para falar rápido: toca, fala, solta. E quando precisar de mais, tem vídeo, tela, música junto e muito mais.</p>
+      </div>
+
+      <div class="feature" style="margin-top:64px">
+        <div class="shot"><div class="phone"><img src="img/chamada.webp" alt="Chamada com vídeo no DIXCORDO" loading="lazy" width="720" height="1470"></div></div>
+        <div>
+          <p class="kicker">Rádio e chamadas</p>
+          <h2>Fale na hora, com ou sem vídeo</h2>
+          <ul class="ticks">
+            <li><span class="i">🎙️</span><span><b>Aperte para falar</b> — como um walkie-talkie. Dá para falar até com a tela apagada, segurando o botão de volume.</span></li>
+            <li><span class="i">📷</span><span><b>Vídeo quando quiser</b> — a câmera começa desligada; ligue, vire ou desligue no meio da conversa.</span></li>
+            <li><span class="i">📺</span><span><b>Espelhar a tela</b> — mostre o seu celular para quem está na chamada.</span></li>
+            <li><span class="i">🎵</span><span><b>Ouvir / assistir junto</b> — YouTube ou Spotify tocando sincronizado para todos.</span></li>
+            <li><span class="i">🤖</span><span><b>Supressor de ruído com IA</b> — tira barulho de motor e vento da sua voz, no próprio celular.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature rev" id="jornada">
+        <div class="shot"><div class="phone"><img src="img/jornada.webp" alt="Modo Jornada: mapa do comboio" loading="lazy" width="720" height="1470"></div></div>
+        <div>
+          <p class="kicker">Modo Jornada</p>
+          <h2>Comboio de carros e motos, todo mundo no mapa</h2>
+          <ul class="ticks">
+            <li><span class="i">🗺️</span><span><b>Todos no mapa, ao vivo</b> — veja onde cada um está, a velocidade e quem ficou para trás.</span></li>
+            <li><span class="i">🧭</span><span><b>Navegação por voz</b> — rota curva a curva em português, com paradas no caminho definidas pelo líder.</span></li>
+            <li><span class="i">🚦</span><span><b>Radares, semáforos e limites</b> — aviso por voz e bipe quando passar do limite da via, e alertas da comunidade (buraco, acidente, obra…).</span></li>
+            <li><span class="i">⛽</span><span><b>Abastecer e Banheiro</b> — um toque avisa o comboio inteiro.</span></li>
+            <li><span class="i">📶</span><span><b>Sem internet também</b> — os celulares próximos se conectam entre si (Bluetooth e Wi-Fi Direct) e repassam voz, posição e SOS.</span></li>
+            <li><span class="i">🆘</span><span><b>SOS</b> — segure 3 segundos e todos recebem uma sirene, mesmo no silencioso.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="shot"><div class="phone"><img src="img/temas.webp" alt="Temas do DIXCORDO" loading="lazy" width="720" height="1470"></div></div>
+        <div>
+          <p class="kicker">Do seu jeito</p>
+          <h2>Mais de 20 temas e um editor completo</h2>
+          <p class="lead">Escolha um tema pronto ou crie o seu: cores, fonte, tamanho do texto, arredondamento, transparência e fundo (degradê, estrelas ou uma foto sua). Salve, exporte e compartilhe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRADE -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">E tem mais</p>
+        <h2>Tudo o que vem no app</h2>
+      </div>
+      <div class="grid">
+        <div class="card"><div class="ico">👥</div><h3>Grupos</h3><p>Até 5 pessoas no mesmo canal, com vídeo e entrada por código ou QR code.</p></div>
+        <div class="card"><div class="ico">🎤</div><h3>Recado de voz que some</h3><p>Até 60 s para quem está offline. Depois de ouvido, é apagado do celular e dos servidores.</p></div>
+        <div class="card"><div class="ico">📍</div><h3>Localização em tempo real</h3><p>Veja seus contatos no mapa, um por um ou todos de uma vez. Só quem você escolher.</p></div>
+        <div class="card"><div class="ico">🚨</div><h3>Alerta</h3><p>Uma sirene no celular do contato, que toca mesmo no silencioso — para emergências.</p></div>
+        <div class="card"><div class="ico">📎</div><h3>Arquivos</h3><p>Mande fotos, vídeos e documentos direto para o contato, cifrados.</p></div>
+        <div class="card"><div class="ico">📻</div><h3>Rádio 24 horas</h3><p>Fica escutando com o app fechado e liga sozinho quando o celular reinicia.</p></div>
+        <div class="card"><div class="ico">🔑</div><h3>Sem número de telefone</h3><p>Você adiciona contatos por um código de 30 números (ou QR code) que muda a cada conexão.</p></div>
+        <div class="card"><div class="ico">🧅</div><h3>Modo Tor</h3><p>Para quem quer ainda mais privacidade: a internet do app passa pelo Orbot.</p></div>
+      </div>
+
+      <div class="gallery" aria-label="Telas do app">
+        <figure><div class="phone"><img src="img/contatos.webp" alt="Lista de contatos" loading="lazy" width="720" height="1470"></div><figcaption>Contatos</figcaption></figure>
+        <figure><div class="phone"><img src="img/chamada.webp" alt="Chamada com vídeo" loading="lazy" width="720" height="1470"></div><figcaption>Chamada com vídeo</figcaption></figure>
+        <figure><div class="phone"><img src="img/jornada.webp" alt="Modo Jornada" loading="lazy" width="720" height="1470"></div><figcaption>Modo Jornada</figcaption></figure>
+        <figure><div class="phone"><img src="img/grupos.webp" alt="Grupos e jornadas" loading="lazy" width="720" height="1470"></div><figcaption>Grupos</figcaption></figure>
+        <figure><div class="phone"><img src="img/temas.webp" alt="Temas" loading="lazy" width="720" height="1470"></div><figcaption>Temas</figcaption></figure>
+        <figure><div class="phone"><img src="img/radio24h.webp" alt="Guia Rádio 24 horas" loading="lazy" width="720" height="1470"></div><figcaption>Rádio 24 horas</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEGURANÇA -->
+  <section id="seguranca">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Segurança e privacidade</p>
+        <h2>Suas conversas não passam por ninguém</h2>
+        <p class="lead">No DIXCORDO não existe um servidor da empresa no meio. A voz e o vídeo vão direto de um celular para o outro, cifrados duas vezes.</p>
+      </div>
+      <div class="flow" aria-label="Como a voz viaja">
+        <span class="node">📱 Você</span><span class="arrow">— cifrado →</span><span class="node">📱 Seu contato</span>
+      </div>
+      <div class="sec">
+        <div class="card"><div class="ico">🔐</div><h3>Duas camadas de criptografia</h3><p>A conexão direta já é cifrada (DTLS-SRTP), e cada pedaço de voz e vídeo ganha mais uma camada AES-256-GCM com chaves que só os dois celulares conhecem.</p></div>
+        <div class="card"><div class="ico">🛰️</div><h3>Sem servidor próprio</h3><p>Para se encontrarem, os celulares trocam avisos cifrados por relés públicos e independentes (rede Nostr). Eles não conseguem ler nada.</p></div>
+        <div class="card"><div class="ico">🙈</div><h3>Sem conta, sem cadastro</h3><p>Não pedimos e-mail, telefone nem nome verdadeiro. Sua identidade é uma chave criada no seu próprio celular.</p></div>
+        <div class="card"><div class="ico">✅</div><h3>Código de segurança</h3><p>Confira com o contato que ninguém está no meio: os dois veem o mesmo código.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTALAR -->
+  <section id="instalar" class="alt">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Instalar</p>
+        <h2>Pronto em menos de um minuto</h2>
+        <p class="lead">O DIXCORDO é distribuído direto por aqui, sem a Play Store. Por isso o Android faz algumas perguntas na primeira vez — é normal.</p>
+      </div>
+      <ol class="steps">
+        <li>Toque em <b>Baixar o DIXCORDO</b> e espere terminar. Se o navegador avisar que o arquivo "pode ser perigoso", toque em <b>Baixar mesmo assim</b> — ele avisa isso para qualquer app fora da loja.</li>
+        <li>Abra o arquivo <b>DIXCORDO.apk</b> pela notificação do download (ou em <i>Arquivos › Downloads</i>).</li>
+        <li>Se pedir, permita <b>Instalar apps desconhecidos</b> para o navegador ou para o app de arquivos.</li>
+        <li>Abra o DIXCORDO e siga o guia <b>Rádio 24 horas</b> para liberar bateria e permissões.</li>
+      </ol>
+      <div class="note">
+        <h3>🛡️ Apareceu um aviso do Play Protect?</h3>
+        <p>Se aparecer <b>"App desconhecido"</b>, <b>"Verificação recomendada"</b> ou <b>"Enviar app para verificação"</b>: toque em <b>Verificar app</b> (ou <b>Enviar</b>) e depois em <b>Instalar mesmo assim</b>. O aviso aparece só porque o app não veio da Play Store e o Google ainda não o conhece.</p>
+        <p>As atualizações chegam sozinhas pelo próprio app e só instalam se forem assinadas com a mesma chave do app que você já tem — um arquivo adulterado é recusado pelo Android.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOVIDADES -->
+  <section id="novidades">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Novidades</p>
+        <h2>O que mudou na última versão</h2>
+      </div>
+      <div class="news">
+        <div class="card" id="news-card">
+          <div class="when" id="news-when">Carregando…</div>
+          <ul id="news-list"></ul>
+          <p style="margin:14px 0 0"><a href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases">Todas as versões →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÚVIDAS -->
+  <section id="duvidas" class="alt">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">Dúvidas</p>
+        <h2>Perguntas frequentes</h2>
+      </div>
+      <div class="faq">
+        <details><summary>O DIXCORDO é vírus? Por que o celular avisa?</summary>
+          <p>Não. O Android avisa para <b>qualquer</b> app instalado fora da Play Store, porque o Google não conhece o arquivo. O DIXCORDO não mostra anúncios, não pede cadastro e não envia suas conversas para servidor nenhum. Se aparecer o aviso do Play Protect, toque em <b>Verificar app</b> e depois em <b>Instalar mesmo assim</b>.</p></details>
+        <details><summary>Por que não está na Play Store?</summary>
+          <p>O app é distribuído direto, por este site, e se atualiza sozinho. Assim as correções chegam a todos no mesmo dia.</p></details>
+        <details><summary>É grátis?</summary>
+          <p>Sim. Basta baixar e instalar.</p></details>
+        <details><summary>Preciso de internet?</summary>
+          <p>Para conversar e fazer chamadas, sim (Wi-Fi ou dados móveis). No Modo Jornada, quando a internet cai, os celulares próximos se conectam direto entre si e continuam trocando voz, posição e SOS.</p></details>
+        <details><summary>Funciona com a tela apagada ou com o app fechado?</summary>
+          <p>Sim. Siga o guia <b>Rádio 24 horas</b> no primeiro uso para liberar bateria e permissões — alguns celulares (Xiaomi, Samsung, Motorola…) fecham apps em segundo plano se isso não for feito.</p></details>
+        <details><summary>Como adiciono um contato?</summary>
+          <p>Na aba <b>Conectar</b>, mande o seu código de 30 números (ou mostre o QR code) para a outra pessoa. Quando ela adicionar, vocês dois já podem falar.</p></details>
+        <details><summary>Como atualizo?</summary>
+          <p>O app procura versões novas sozinho e avisa. Se preferir, baixe de novo por esta página e instale <b>por cima</b> — seus contatos e grupos continuam.</p></details>
+        <details><summary>Quais celulares são compatíveis?</summary>
+          <p>Android 10 ou mais novo, com o <b>Android System WebView</b> e o <b>Google Chrome</b> atualizados pela Play Store.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <div class="box">
+        <h2>Bora falar?</h2>
+        <p class="lead">Baixe, mande o seu código para quem você quer chamar e aperte para falar.</p>
+        <div class="cta">
+          <a class="btn dl" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO.apk">
+            <span>⬇️</span><span class="t">Baixar o DIXCORDO<small class="dl-sub">APK para Android · grátis</small></span></a>
+          <button class="copy" id="copy" type="button">🔗 Copiar link para mandar a alguém</button>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span>📻 DIXCORDO · Android 10 ou mais novo</span>
+    <span><a href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases">Versões anteriores</a></span>
+  </div>
+</footer>
 
 <script>
 (function () {
   'use strict';
   var REPO = 'MarcioSchuenk/DIXCORDO-DOWLOAD-APK';
-  var FIXED = 'https://github.com/' + REPO + '/releases/latest/download/DIXCORDO.apk';
   var $ = function (id) { return document.getElementById(id); };
 
   $('copy').onclick = function () {
@@ -116,7 +400,7 @@
     else prompt('Copie o link:', url);
   };
 
-  // Mostra a versão mais nova, a data, o tamanho e as novidades (a API do GitHub responde sem login).
+  // Versão, tamanho e novidades da última versão (API pública do GitHub). Sem ela, o link fixo continua funcionando.
   fetch('https://api.github.com/repos/' + REPO + '/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (rel) {
@@ -127,14 +411,23 @@
       $('ver').innerHTML = 'Versão mais nova: <b></b>' + (d ? ' · ' + d : '');
       $('ver').querySelector('b').textContent = v || '—';
       if (apk) {
-        $('btn').href = apk.browser_download_url;
-        $('btn-sub').textContent = 'APK para Android · ' + (apk.size / 1048576).toFixed(1).replace('.', ',') + ' MB';
+        var mb = (apk.size / 1048576).toFixed(1).replace('.', ',') + ' MB';
+        [].forEach.call(document.querySelectorAll('a.dl'), function (a) { a.href = apk.browser_download_url; });
+        [].forEach.call(document.querySelectorAll('.dl-sub'), function (s) { s.textContent = 'APK para Android · grátis · ' + mb; });
       }
-      if (rel.body) { $('notes').textContent = rel.body.replace(/\r/g, ''); $('news').hidden = false; }
+      $('news-when').textContent = 'Versão ' + (v || '?') + (d ? ' · ' + d : '');
+      var list = $('news-list');
+      String(rel.body || '').replace(/\r/g, '').split(/\n+/).forEach(function (line) {
+        line.replace(/^\s*[-*]\s*/, '').split(/(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ(])/).forEach(function (s) {
+          s = s.trim(); if (!s) return;
+          var li = document.createElement('li'); li.textContent = s; list.appendChild(li);
+        });
+      });
+      if (!list.children.length) { var li = document.createElement('li'); li.textContent = 'Melhorias e correções.'; list.appendChild(li); }
     })
     .catch(function () {
       $('ver').innerHTML = 'Versão mais nova: <b>disponível</b>';
-      $('btn').href = FIXED;
+      $('news-when').textContent = 'Não deu para carregar as novidades agora.';
     });
 })();
 </script>
