@@ -179,7 +179,7 @@
     <nav class="nav">
       <a href="#baixar">Baixar</a>
       <a href="#recursos">Recursos</a>
-      <a href="#jornada">Modo Jornada</a>
+      <a href="#gps">GPS</a><a href="#jornada">Modo Jornada</a>
       <a href="#seguranca">Segurança</a>
       <a href="#instalar">Instalar</a>
       <a href="#duvidas">Dúvidas</a>
@@ -253,7 +253,7 @@
           <a class="btn" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO-linux-amd64.deb"><span>⬇️</span><span class="t">Baixar para Linux<small>pacote .deb · atualiza sozinho</small></span></a>
         </div>
       </div>
-      <p class="dl-note">No computador ficam rádio, chamadas de voz e vídeo, grupos, recados, arquivos e temas, e ele se atualiza sozinho (espera a conversa terminar). O <b>Modo Jornada</b> (comboio no mapa) é só no celular.<br>
+      <p class="dl-note">No computador ficam rádio, chamadas de voz e vídeo, grupos, recados, arquivos e temas, e ele se atualiza sozinho (espera a conversa terminar). O <b>GPS</b> e o <b>Modo Jornada</b> (comboio no mapa) são só no celular.<br>
         Versão mais nova: <b id="ver2">…</b> · <a href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases">versões anteriores</a></p>
     </div>
   </section>
@@ -298,7 +298,22 @@
         </div>
       </div>
 
-      <div class="feature">
+      <div class="feature" id="gps">
+        <div class="shot"><div class="phone"><img src="img/gps.jpg" alt="Aba GPS navegando: faixa verde com a próxima manobra, seta na rota e velocímetro" loading="lazy" width="720" height="1600"></div></div>
+        <div>
+          <p class="kicker">GPS</p>
+          <h2>Navegação como a do Waze, dentro do app</h2>
+          <ul class="ticks">
+            <li><span class="i">🔍</span><span><b>Acha qualquer lugar</b> — lojas, postos, hospitais, pontos de referência e endereços com número, perto de você.</span></li>
+            <li><span class="i">🛣️</span><span><b>Até 3 rotas</b> — com tempo, distância e por onde passa; escolha e toque em Iniciar.</span></li>
+            <li><span class="i">🗣️</span><span><b>Voz em português</b> — "em 300 metros, vire à direita", com a seta presa na rota e o mapa girando e inclinado em 3D.</span></li>
+            <li><span class="i">📷</span><span><b>Radares e limite da via</b> — aviso por voz e o limite ao lado do velocímetro.</span></li>
+            <li><span class="i">🏠</span><span><b>Casa, Trabalho e favoritos</b> — um toque e a rota já sai.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature rev">
         <div class="shot"><div class="phone"><img src="img/temas.webp" alt="Temas do DIXCORDO" loading="lazy" width="720" height="1470"></div></div>
         <div>
           <p class="kicker">Do seu jeito</p>
@@ -318,6 +333,7 @@
       </div>
       <div class="grid">
         <div class="card"><div class="ico">👥</div><h3>Grupos</h3><p>Até 5 pessoas no mesmo canal, com vídeo e entrada por código ou QR code.</p></div>
+        <div class="card"><div class="ico">🧭</div><h3>GPS</h3><p>Navegação como a do Waze: busque o destino (lojas, postos, pontos de referência), siga a rota com voz em português e ela se refaz se você sair do caminho.</p></div>
         <div class="card"><div class="ico">🎤</div><h3>Recado de voz que some</h3><p>Até 60 s para quem está offline. Depois de ouvido, é apagado do celular e dos servidores — e você vê no contato quando ele ouviu.</p></div>
         <div class="card"><div class="ico">📍</div><h3>Localização em tempo real</h3><p>Veja seus contatos no mapa, um por um ou todos de uma vez. Só quem você escolher.</p></div>
         <div class="card"><div class="ico">🚨</div><h3>Alerta</h3><p>Uma sirene no celular do contato, que toca mesmo no silencioso — para emergências.</p></div>
@@ -326,7 +342,6 @@
         <div class="card"><div class="ico">🔑</div><h3>Sem número de telefone</h3><p>Você adiciona contatos por um código de 30 números (ou QR code) que muda a cada conexão.</p></div>
         <div class="card"><div class="ico">🧅</div><h3>Modo Tor</h3><p>Para quem quer ainda mais privacidade: a internet do app passa pelo Orbot. O app acha o Orbot sozinho e avisa se ele estiver atrapalhando a voz.</p></div>
         <div class="card"><div class="ico">📡</div><h3>Sem internet</h3><p>Num grupo ou numa jornada, se a internet cair, os celulares por perto continuam se falando por Bluetooth e Wi-Fi Direct — sozinho e cifrado.</p></div>
-        <div class="card"><div class="ico">🔄</div><h3>Conversa entre versões</h3><p>Quem ainda não atualizou continua falando com você. O app dele se atualiza assim que a conversa termina.</p></div>
         <div class="card"><div class="ico">📌</div><h3>Quem fixou você</h3><p>No cartão do contato aparece quando ele fixou você no celular dele — e quando ouviu o seu recado.</p></div>
         <div class="card"><div class="ico">💌</div><h3>Convide com um toque</h3><p>Na aba Conectar, mande o link do DIXCORDO para quem você quiser baixar — celular ou computador.</p></div>
       </div>
@@ -334,6 +349,7 @@
       <div class="gallery" aria-label="Telas do app">
         <figure><div class="phone"><img src="img/contatos.webp" alt="Lista de contatos" loading="lazy" width="720" height="1470"></div><figcaption>Contatos</figcaption></figure>
         <figure><div class="phone"><img src="img/chamada.webp" alt="Chamada com vídeo" loading="lazy" width="720" height="1470"></div><figcaption>Chamada com vídeo</figcaption></figure>
+        <figure><div class="phone"><img src="img/gps.jpg" alt="GPS navegando" loading="lazy" width="720" height="1600"></div><figcaption>GPS</figcaption></figure>
         <figure><div class="phone"><img src="img/jornada.webp" alt="Modo Jornada" loading="lazy" width="720" height="1470"></div><figcaption>Modo Jornada</figcaption></figure>
         <figure><div class="phone"><img src="img/grupos.webp" alt="Grupos e jornadas" loading="lazy" width="720" height="1470"></div><figcaption>Grupos</figcaption></figure>
         <figure><div class="phone"><img src="img/temas.webp" alt="Temas" loading="lazy" width="720" height="1470"></div><figcaption>Temas</figcaption></figure>
@@ -424,7 +440,7 @@
         <details><summary>Como atualizo?</summary>
           <p>Não precisa fazer nada: o app procura a versão nova, baixa e instala sozinho, no celular e no computador (no celular o Android pode pedir um toque em <b>Atualizar</b>). Se você estiver numa conversa, ela continua e a atualização entra quando terminar. Se preferir, baixe por esta página e instale <b>por cima</b> — seus contatos e grupos continuam.</p></details>
         <details><summary>Tem para computador?</summary>
-          <p>Sim: Windows (10 e 11) e Linux (.deb para Ubuntu, Debian, Mint, Pop!_OS…). No computador funcionam rádio, chamadas de voz e vídeo, grupos, recados, arquivos e temas — e você fala com quem está no celular. O Modo Jornada é só no celular. O app do computador se atualiza sozinho.</p></details>
+          <p>Sim: Windows (10 e 11) e Linux (.deb para Ubuntu, Debian, Mint, Pop!_OS…). No computador funcionam rádio, chamadas de voz e vídeo, grupos, recados, arquivos e temas — e você fala com quem está no celular. O GPS e o Modo Jornada são só no celular. O app do computador se atualiza sozinho.</p></details>
         <details><summary>Liguei o Modo Tor e as chamadas não conectam. E agora?</summary>
           <p>Quase sempre é o Orbot no <b>modo VPN</b>: sem apps escolhidos, ele leva todos os apps pelo Tor, inclusive o DIXCORDO, e o Tor não carrega voz. No Orbot, ligue o <b>Modo de usuário avançado</b> (em Configurações do Orbot) ou, em <b>Escolha os aplicativos</b>, marque só os apps que você quer esconder, sem o DIXCORDO. Depois ligue o Modo Tor no DIXCORDO (Ajustes › Privacidade): os relés continuam sem ver o seu IP e a voz sai direta. O próprio app mostra esse aviso quando percebe o problema.</p></details>
         <details><summary>Quais celulares são compatíveis?</summary>
