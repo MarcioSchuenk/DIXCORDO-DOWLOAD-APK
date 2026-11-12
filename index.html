@@ -240,7 +240,7 @@
             <li>Abra o <b>DIXCORDO.exe</b> da pasta extraída.</li>
             <li>Se o Windows mostrar "O Windows protegeu o computador": <b>Mais informações › Executar assim mesmo</b>.</li>
           </ol>
-          <a class="btn" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO-windows-x64.zip"><span>⬇️</span><span class="t">Baixar para Windows<small>versão portátil (.zip)</small></span></a>
+          <a class="btn" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO-windows-x64.zip"><span>⬇️</span><span class="t">Baixar para Windows<small>portátil (.zip) · atualiza sozinho</small></span></a>
         </div>
         <div class="dlc" data-os="linux">
           <div class="os"><span>🐧</span><h3>Linux</h3></div>
@@ -250,10 +250,10 @@
             <li>Abra com a Central de Programas, ou no terminal: <code>sudo apt install ./DIXCORDO-linux-amd64.deb</code></li>
             <li>Procure <b>DIXCORDO</b> nos seus aplicativos.</li>
           </ol>
-          <a class="btn" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO-linux-amd64.deb"><span>⬇️</span><span class="t">Baixar para Linux<small>pacote .deb</small></span></a>
+          <a class="btn" href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases/latest/download/DIXCORDO-linux-amd64.deb"><span>⬇️</span><span class="t">Baixar para Linux<small>pacote .deb · atualiza sozinho</small></span></a>
         </div>
       </div>
-      <p class="dl-note">No computador ficam rádio, chamadas de voz e vídeo, grupos, recados, arquivos e temas. O <b>Modo Jornada</b> (comboio no mapa) é só no celular.<br>
+      <p class="dl-note">No computador ficam rádio, chamadas de voz e vídeo, grupos, recados, arquivos e temas, e ele se atualiza sozinho (espera a conversa terminar). O <b>Modo Jornada</b> (comboio no mapa) é só no celular.<br>
         Versão mais nova: <b id="ver2">…</b> · <a href="https://github.com/MarcioSchuenk/DIXCORDO-DOWLOAD-APK/releases">versões anteriores</a></p>
     </div>
   </section>
@@ -318,13 +318,17 @@
       </div>
       <div class="grid">
         <div class="card"><div class="ico">👥</div><h3>Grupos</h3><p>Até 5 pessoas no mesmo canal, com vídeo e entrada por código ou QR code.</p></div>
-        <div class="card"><div class="ico">🎤</div><h3>Recado de voz que some</h3><p>Até 60 s para quem está offline. Depois de ouvido, é apagado do celular e dos servidores.</p></div>
+        <div class="card"><div class="ico">🎤</div><h3>Recado de voz que some</h3><p>Até 60 s para quem está offline. Depois de ouvido, é apagado do celular e dos servidores — e você vê no contato quando ele ouviu.</p></div>
         <div class="card"><div class="ico">📍</div><h3>Localização em tempo real</h3><p>Veja seus contatos no mapa, um por um ou todos de uma vez. Só quem você escolher.</p></div>
         <div class="card"><div class="ico">🚨</div><h3>Alerta</h3><p>Uma sirene no celular do contato, que toca mesmo no silencioso — para emergências.</p></div>
         <div class="card"><div class="ico">📎</div><h3>Arquivos</h3><p>Mande fotos, vídeos e documentos direto para o contato, cifrados.</p></div>
         <div class="card"><div class="ico">📻</div><h3>Rádio 24 horas</h3><p>Fica escutando com o app fechado e liga sozinho quando o celular reinicia.</p></div>
         <div class="card"><div class="ico">🔑</div><h3>Sem número de telefone</h3><p>Você adiciona contatos por um código de 30 números (ou QR code) que muda a cada conexão.</p></div>
-        <div class="card"><div class="ico">🧅</div><h3>Modo Tor</h3><p>Para quem quer ainda mais privacidade: a internet do app passa pelo Orbot.</p></div>
+        <div class="card"><div class="ico">🧅</div><h3>Modo Tor</h3><p>Para quem quer ainda mais privacidade: a internet do app passa pelo Orbot. O app acha o Orbot sozinho e avisa se ele estiver atrapalhando a voz.</p></div>
+        <div class="card"><div class="ico">📡</div><h3>Sem internet</h3><p>Num grupo ou numa jornada, se a internet cair, os celulares por perto continuam se falando por Bluetooth e Wi-Fi Direct — sozinho e cifrado.</p></div>
+        <div class="card"><div class="ico">🔄</div><h3>Conversa entre versões</h3><p>Quem ainda não atualizou continua falando com você. O app dele se atualiza assim que a conversa termina.</p></div>
+        <div class="card"><div class="ico">📌</div><h3>Quem fixou você</h3><p>No cartão do contato aparece quando ele fixou você no celular dele — e quando ouviu o seu recado.</p></div>
+        <div class="card"><div class="ico">💌</div><h3>Convide com um toque</h3><p>Na aba Conectar, mande o link do DIXCORDO para quem você quiser baixar — celular ou computador.</p></div>
       </div>
 
       <div class="gallery" aria-label="Telas do app">
@@ -412,15 +416,17 @@
         <details><summary>É grátis?</summary>
           <p>Sim. Basta baixar e instalar.</p></details>
         <details><summary>Preciso de internet?</summary>
-          <p>Para conversar e fazer chamadas, sim (Wi-Fi ou dados móveis). No Modo Jornada, quando a internet cai, os celulares próximos se conectam direto entre si e continuam trocando voz, posição e SOS.</p></details>
+          <p>Para conversar e fazer chamadas, sim (Wi-Fi ou dados móveis). Mas num grupo ou no Modo Jornada, quando a internet cai, os celulares próximos (uns 50 a 150 m) se conectam direto entre si por Bluetooth e Wi-Fi Direct, sozinhos, e continuam trocando voz — e, na jornada, também posição e SOS.</p></details>
         <details><summary>Funciona com a tela apagada ou com o app fechado?</summary>
           <p>Sim. Siga o guia <b>Rádio 24 horas</b> no primeiro uso para liberar bateria e permissões — alguns celulares (Xiaomi, Samsung, Motorola…) fecham apps em segundo plano se isso não for feito.</p></details>
         <details><summary>Como adiciono um contato?</summary>
           <p>Na aba <b>Conectar</b>, mande o seu código de 30 números (ou mostre o QR code) para a outra pessoa. Quando ela adicionar, vocês dois já podem falar.</p></details>
         <details><summary>Como atualizo?</summary>
-          <p>O app procura versões novas sozinho e avisa. Se preferir, baixe de novo por esta página e instale <b>por cima</b> — seus contatos e grupos continuam.</p></details>
+          <p>Não precisa fazer nada: o app procura a versão nova, baixa e instala sozinho, no celular e no computador (no celular o Android pode pedir um toque em <b>Atualizar</b>). Se você estiver numa conversa, ela continua e a atualização entra quando terminar. Se preferir, baixe por esta página e instale <b>por cima</b> — seus contatos e grupos continuam.</p></details>
         <details><summary>Tem para computador?</summary>
-          <p>Sim: Windows (10 e 11) e Linux (.deb para Ubuntu, Debian, Mint, Pop!_OS…). No computador funcionam rádio, chamadas de voz e vídeo, grupos, recados, arquivos e temas — e você fala com quem está no celular. O Modo Jornada é só no celular. O app do computador avisa quando sai versão nova.</p></details>
+          <p>Sim: Windows (10 e 11) e Linux (.deb para Ubuntu, Debian, Mint, Pop!_OS…). No computador funcionam rádio, chamadas de voz e vídeo, grupos, recados, arquivos e temas — e você fala com quem está no celular. O Modo Jornada é só no celular. O app do computador se atualiza sozinho.</p></details>
+        <details><summary>Liguei o Modo Tor e as chamadas não conectam. E agora?</summary>
+          <p>Quase sempre é o Orbot no <b>modo VPN</b>: sem apps escolhidos, ele leva todos os apps pelo Tor, inclusive o DIXCORDO, e o Tor não carrega voz. No Orbot, ligue o <b>Modo de usuário avançado</b> (em Configurações do Orbot) ou, em <b>Escolha os aplicativos</b>, marque só os apps que você quer esconder, sem o DIXCORDO. Depois ligue o Modo Tor no DIXCORDO (Ajustes › Privacidade): os relés continuam sem ver o seu IP e a voz sai direta. O próprio app mostra esse aviso quando percebe o problema.</p></details>
         <details><summary>Quais celulares são compatíveis?</summary>
           <p>Android 10 ou mais novo, com o <b>Android System WebView</b> e o <b>Google Chrome</b> atualizados pela Play Store.</p></details>
       </div>
